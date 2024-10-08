@@ -5,10 +5,13 @@
     <arg name="model" default="$(find mobilebot)/urdf/mobilebot.urdf.xacro" />
     <arg name="slam_method" default="gmapping" doc="lam type [gmapping, cartographer, hector]"/>
     <arg name="open_rviz" default="true"/>
+    <arg name="configuration_basename" default="cartographer.lua"/>
 
     <!-- Slam Method -->
     <include file="$(find mobilebot_nav)/launch/$(arg slam_method).launch">
-       <arg name="model" value="$(arg model)"/>            
+       <arg name="model" value="$(arg model)"/>         
+       <!-- <arg name="configuration_basename" value="$(arg configuration_basename)"/> -->
+          
     </include>    
 
     <!-- rviz -->
